@@ -1,0 +1,16 @@
+syntax ="proto3";
+option java_package="ma.enset.stubs";
+
+message ChatRequest {
+  string user = 1;
+  string content = 2;
+}
+
+message ChatResponse {
+  string user = 1;
+  string content = 2;
+}
+
+service ChatService {
+  rpc chat(stream ChatRequest) returns (stream ChatResponse);
+}
